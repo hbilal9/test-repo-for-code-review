@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+
+app = FastAPI()
+
+@app.get("/api/health")
+    async def health_check():
+        return JSONResponse(
+            {"status": "ok", "message": "API is running"}
+        )
